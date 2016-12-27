@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<form id="postform" action="wpis.php" method="post">
+	<form id="postform" action="wpis.php" method="post" enctype="multipart/form-data">
 
 	  Nazwa użytkownika:<br>
 	  <input type="text" name="username">

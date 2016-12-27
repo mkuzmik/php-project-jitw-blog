@@ -14,9 +14,22 @@ else {
 
 function add_post($dir_name) {
     $postfilename = get_post_file_name($dir_name);
+
     $postfile = fopen($dir_name."/".$postfilename,"w");
     fwrite($postfile, $_POST["content"]);
     fclose($postfile);
+
+    check_if_exists_and_save( "file1", "1", $postfilename, $dir_name);
+    check_if_exists_and_save( "file2", "2", $postfilename, $dir_name);
+    check_if_exists_and_save( "file3", "3", $postfilename, $dir_name);
+}
+
+function check_if_exists_and_save($filename,$filenumber, $postfilename, $target_dir) {
+    $target_file = $target_dir . basename($_FILES[$filename]["name"]);
+    $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
+    if(file_exists($_FILES[$filename]["tmp_name"])) {
+        move_uploaded_file($_FILES[$filename]["tmp_name"], $target_dir."/".$postfilename.$filenumber.".".$file_type);
+    }
 }
 
 function get_post_file_name($directory) {
