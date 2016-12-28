@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form id="commentform" action="nowy.php" method="get">
+<form id="commentform" action="koment.php" method="get">
+
+    <input type='hidden' name='blogname' value='<?php echo $_GET["blogname"]; ?>'/>
+    <input type='hidden' name='postfilename' value='<?php echo $_GET["postfilename"]; ?>'/>
 
     Rodzaj komentarza: <br>
-    <select name="comment_type">
+    <select name="commenttype">
         <option value="pozytywny">Pozytywny</option>
         <option value="neutralny">Neutralny</option>
         <option value="negatywny">Negatywny</option>

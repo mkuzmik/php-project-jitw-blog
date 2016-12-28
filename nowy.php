@@ -9,7 +9,7 @@ if(sem_acquire($semRes)) {
 
     check_if_dir_exist_and_create_it_if_not();
 
-    sem_release($semRes); // release the semaphore so other process can use it
+    sem_release($semRes);
 }
 
 function check_if_dir_exist_and_create_it_if_not() {

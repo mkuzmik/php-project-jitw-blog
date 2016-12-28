@@ -6,7 +6,7 @@ define('PASSWORD_MD5', md5($_POST["password"]));
 $dir_name = find_and_return_directory_name();
 if ($dir_name != false && isPasswordOK($dir_name)) {
     add_post($dir_name);
-    echo "Added succesfully!";
+    header('Location: blog.php?blogname=' . find_and_return_directory_name() );
 }
 else {
     echo "Authorization failed..";
