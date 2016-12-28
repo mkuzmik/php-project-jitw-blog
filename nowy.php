@@ -12,6 +12,8 @@ if(sem_acquire($semRes)) {
     sem_release($semRes);
 }
 
+header('Location: blog.php?blogname='.$_POST["title"] );
+
 function check_if_dir_exist_and_create_it_if_not() {
     if (!is_dir($_POST["title"])) {
         make_dir($_POST["title"]);

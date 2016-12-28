@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset='UTF-8'/>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 <body>
+
+<?php include 'menu.php'; ?>
+
 <form id="commentform" action="koment.php" method="get">
 
     <input type='hidden' name='blogname' value='<?php echo $_GET["blogname"]; ?>'/>

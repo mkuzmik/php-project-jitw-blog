@@ -13,19 +13,31 @@ if (is_dir(BLOG_NAME)) {
 
     // show blog
 
-    echo "    <!DOCTYPE html>
-                <html>
-                <body>";
+    echo "    
+    <!DOCTYPE html>
+    <head>
+        <meta charset='UTF-8'/>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\">
+    </head>
+    <html>
+    <body>
+                ";
 
-    echo "<font size='4'>".BLOG_NAME."</font><br><br><br>";
+    include 'menu.php';
+
+    echo "<div id='title'>".BLOG_NAME."</div><br><br><br>";
 
     $files = scandir(BLOG_NAME."/");
 
     foreach ($files as $file) {
         if (strlen($file) == 16) {
+            echo "<div id='post'>";
+            echo "<div id='postcontent'>";
             show_post($file);
+            echo "</div>";
             show_comments($file);
             add_comment_button($file);
+            echo "</div>";
         }
     }
 
@@ -96,7 +108,7 @@ function show_comments($file) {
                 fclose($commentfile);
 
                 echo "
-                    <div style='margin-left: 50px'>
+                    <div id='comment'>
                     Czas: " . $datetime . "<br>
                     Typ: " . $commenttype . "<br>
                     Nazwa: " . $username . "<br>

@@ -1,0 +1,50 @@
+#title {
+    background-color: aquamarine;
+    font-family: "Arial Black";
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#post {
+    border-style: solid;
+    border-width: 30px;
+    border-color: chocolate;
+    background-color: blanchedalmond;
+}
+
+#comment {
+    font-size: 10px;
+    margin-left: 15px;
+}
+
+#postcontent {
+    text-align: center;
+    font-family: "Arial Black";
+    font-size: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}

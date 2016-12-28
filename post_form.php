@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset='UTF-8'/>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 <body>
+
+    <?php include 'menu.php'; ?>
+
 	<form id="postform" action="wpis.php" method="post" enctype="multipart/form-data">
 
 	  Nazwa użytkownika:<br>
