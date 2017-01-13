@@ -2,13 +2,15 @@
 <html>
 <head>
     <meta charset='UTF-8'/>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/mystyle.css">
+    <script src="js_scripts/date_validation.js" type="text/javascript"></script>
+    <script src="js_scripts/attachments_adder.js" type="text/javascript"></script>
 </head>
 <body>
 
     <?php include 'menu.php'; ?>
 
-	<form id="postform" action="wpis.php" method="post" enctype="multipart/form-data">
+	<form id="postform" action="add_new_post.php" method="post" enctype="multipart/form-data">
 
 	  Nazwa użytkownika:<br>
 	  <input type="text" name="username">
@@ -23,31 +25,23 @@
 	  <br>
 
 	  Data:<br>
-	  <?php
-	  echo "<input type='text' name='date' value='".date('Y-m-d')."'";
-	  ?>
-	  <br><br>
+	  <input id="postDate" type='text' name='date' value="">
+        <div class="annotation" id="dataAnnotation"></div>
+	  <br>
 
       Godzina:<br>
-	  <?php
-	  echo "<input type='text' name='time' value='".date('H:i')."'";
-	  ?>
-	  <br><br>
-
-      File 1:<br>
-	  <input type="file" name="file1">
+        <input id="postTime" type='text' name='time' value="">
+        <div class="annotation" id="timeAnnotation"></div>
 	  <br>
 
-      File 2:<br>
-	  <input type="file" name="file2">
-	  <br>
+        <div id="attachmentsContainer"></div>
 
-      File 3:<br>
-	  <input type="file" name="file3">
-	  <br>
+      <input type="button" onclick="createFileInput()" value="Nowy załącznik">
+      <br>
 	  <br>
 	  <input type="submit" value="Dodaj">
-       <br> <input type="reset" value="Wyczyść!">
+       <br>
+        <input type="reset" value="Wyczyść!">
 	</form> 
 </body>
 </html>
