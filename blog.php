@@ -9,7 +9,7 @@ define("BLOG_NAME", $_GET["blogname"]);
 
 
 
-if (is_dir(BLOG_NAME)) {
+if (is_dir(BLOG_NAME) && file_exists(BLOG_NAME."/info")) {
 
     // show blog
 
@@ -60,13 +60,15 @@ function show_blog_list() {
     $dirs = array_filter(glob('*'), 'is_dir');
 
     foreach ($dirs as $single_dir) {
-        echo"
+        if (file_exists($single_dir."/info")) {
+            echo "
         <li>
-        <a href='blog.php?blogname=".$single_dir."'>
-        ".$single_dir."
+        <a href='blog.php?blogname=" . $single_dir . "'>
+        " . $single_dir . "
         </a>
         </li>
         ";
+        }
     }
 
     echo "</ul>";

@@ -19,9 +19,11 @@ function add_post($dir_name) {
     fwrite($postfile, $_POST["content"]);
     fclose($postfile);
 
-    check_if_exists_and_save( "file1", "1", $postfilename, $dir_name);
-    check_if_exists_and_save( "file2", "2", $postfilename, $dir_name);
-    check_if_exists_and_save( "file3", "3", $postfilename, $dir_name);
+    $attachedFileID = 0;
+    foreach ($_FILES as $file) {
+        check_if_exists_and_save("file".strval($attachedFileID), $attachedFileID, $postfilename, $dir_name);
+        $attachedFileID++;
+    }
 }
 
 function check_if_exists_and_save($filename,$filenumber, $postfilename, $target_dir) {
@@ -29,6 +31,10 @@ function check_if_exists_and_save($filename,$filenumber, $postfilename, $target_
     $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
     if(file_exists($_FILES[$filename]["tmp_name"])) {
         move_uploaded_file($_FILES[$filename]["tmp_name"], $target_dir."/".$postfilename.$filenumber.".".$file_type);
+        return true;
+    }
+    else {
+        return false;
     }
 }
 

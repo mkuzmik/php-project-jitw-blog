@@ -1,21 +1,41 @@
+body {
+    background-color: lightpink;
+}
+
 #title {
-    background-color: aquamarine;
+    background-color: fuchsia;
     font-family: "Arial Black";
-    font-size: 30px;
+    font-size: 50px;
+    padding-top: 50px;
     text-align: center;
     vertical-align: middle;
+    height: 120px;
 }
 
 #post {
-    border-style: solid;
+    border-style: outset;
     border-width: 30px;
-    border-color: chocolate;
-    background-color: blanchedalmond;
+    border-color: hotpink;
+    background-color: lightpink;
 }
 
 #comment {
     font-size: 10px;
+    font-family: Calibri;
     margin-left: 15px;
+    background-color: cadetblue;
+}
+
+.commentcontent {
+    font-size: 15px;
+}
+
+.annotation {
+    visibility: hidden;
+}
+
+#commentform {
+    text-align: center;
 }
 
 #postcontent {
@@ -31,6 +51,7 @@ ul {
     overflow: hidden;
     background-color: #333;
     position: relative;
+    width: 100%;
 }
 
 li {

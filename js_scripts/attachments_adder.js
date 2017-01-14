@@ -8,7 +8,7 @@ function createFileInput() {
     input.type = "file";
 
 
-    var id = document.getElementById("attachmentsContainer").childNodes.length;
+    var id = document.getElementById("attachmentsContainer").childNodes.length / 2;
     input.name = "file".concat(id.toString());
 
     document.getElementById("attachmentsContainer").appendChild(input);

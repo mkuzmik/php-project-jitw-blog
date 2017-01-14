@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='UTF-8'/>
-    <link rel="stylesheet" type="text/css" href="styles/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
     <script src="js_scripts/date_validation.js" type="text/javascript"></script>
     <script src="js_scripts/attachments_adder.js" type="text/javascript"></script>
 </head>
@@ -10,7 +10,7 @@
 
     <?php include 'menu.php'; ?>
 
-	<form id="postform" action="add_new_post.php" method="post" enctype="multipart/form-data">
+	<form id="postform" action="wpis.php" method="post" enctype="multipart/form-data">
 
 	  Nazwa użytkownika:<br>
 	  <input type="text" name="username">
