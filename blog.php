@@ -16,8 +16,11 @@ if (is_dir(BLOG_NAME) && file_exists(BLOG_NAME."/info")) {
     echo "    
     <!DOCTYPE html>
     <head>
-        <meta charset='UTF-8'/>
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\">
+        <meta charset='UTF-8'/>";
+
+    include 'styles.php';
+
+    echo "
     </head>
     <html>
     <body>

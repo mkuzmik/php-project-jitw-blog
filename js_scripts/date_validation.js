@@ -149,7 +149,7 @@ function setTimeAnnotationIfNotValid() {
     }
 }
 
-window.onload = function() {
+function initializeDateValidation() {
     setActualDateAndTime();
 
     var postDate = document.getElementById('postDate');

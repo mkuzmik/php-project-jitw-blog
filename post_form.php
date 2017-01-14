@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head data_validation="true">
     <meta charset='UTF-8'/>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <?php include 'styles.php';?>
+    <title title="dataValReq">Dodaj nowy post</title>
     <script src="js_scripts/date_validation.js" type="text/javascript"></script>
     <script src="js_scripts/attachments_adder.js" type="text/javascript"></script>
 </head>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='UTF-8'/>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <?php include 'styles.php';?>
 </head>
 <body>
 

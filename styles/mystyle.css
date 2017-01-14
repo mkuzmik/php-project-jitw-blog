@@ -1,0 +1,71 @@
+body {
+    background-color: lightpink;
+}
+
+#title {
+    background-color: fuchsia;
+    font-family: "Arial Black";
+    font-size: 50px;
+    padding-top: 50px;
+    text-align: center;
+    vertical-align: middle;
+    height: 120px;
+}
+
+#post {
+    border-style: outset;
+    border-width: 30px;
+    border-color: hotpink;
+    background-color: lightpink;
+}
+
+#comment {
+    font-size: 10px;
+    font-family: Calibri;
+    margin-left: 15px;
+    background-color: cadetblue;
+}
+
+.commentcontent {
+    font-size: 15px;
+}
+
+.annotation {
+    visibility: hidden;
+}
+
+#commentform {
+    text-align: center;
+}
+
+#postcontent {
+    text-align: center;
+    font-family: "Arial Black";
+    font-size: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
