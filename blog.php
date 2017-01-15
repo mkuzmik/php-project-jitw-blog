@@ -16,7 +16,8 @@ if (is_dir(BLOG_NAME) && file_exists(BLOG_NAME."/info")) {
     echo "    
     <!DOCTYPE html>
     <head>
-        <meta charset='UTF-8'/>";
+        <meta charset='UTF-8'/>
+        <script type='text/javascript' src='js_scripts/messenger.js'></script>";
 
     include 'styles.php';
 
@@ -44,7 +45,7 @@ if (is_dir(BLOG_NAME) && file_exists(BLOG_NAME."/info")) {
         }
     }
 
-    add_new_post_button();
+    include 'messenger_front.php';
 
     echo "
     </body>
