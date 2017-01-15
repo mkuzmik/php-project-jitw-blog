@@ -13,7 +13,7 @@ echo "
 <li><a href='register_form.php'>Załóż blog</a></li>
 <li><a href='index.php'>Znajdź blog</a></li>
 <li><a href='post_form.php'>Dodaj post</a></li>
-<li><select id='styleChanger' style='visibility: hidden;'></select></li>
+<li><select class='selectStyle' id='styleChanger' style='visibility: hidden;'></select></li>
 </ul>
 </div>
 
