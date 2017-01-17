@@ -46,6 +46,7 @@ if (is_dir(BLOG_NAME) && file_exists(BLOG_NAME."/info")) {
     }
 
     include 'messenger_front.php';
+    echo "<input id='blogName' type='hidden' value='".BLOG_NAME."'>";
 
     echo "
     </body>
