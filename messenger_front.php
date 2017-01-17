@@ -2,9 +2,9 @@
 echo "
 
 <div id='messengerContainer'>
-    <input id='isMessengerActive' type='checkbox' onchange='showOrHideMessenger();'> Is Messenger Active
+    <input id='isMessengerActive' type='checkbox' onchange='showOrHideMessenger(); turnOnAndOffMessenger();'> Is Messenger Active
     <div id='messengerActivation' style='visibility: hidden;'>
-        <textarea id='messengerArea' rows='10' cols='50'></textarea><br>
+        <textarea readonly id='messengerArea' rows='10' cols='50'></textarea><br>
         Nazwa:
         <input id='nickname' type='text'><br>
         Wiadomość:

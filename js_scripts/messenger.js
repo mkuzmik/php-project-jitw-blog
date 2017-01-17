@@ -9,7 +9,6 @@ function showOrHideMessenger() {
     }
 }
 
-
 function resetMessage() {
     document.getElementById('nickname').value = "";
     document.getElementById('message').value = "";
@@ -40,12 +39,41 @@ function sendMessage() {
     xml.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200)
             displayMessages(this.responseText);
+        scrollMessengerAreaToTheBottom();
     }
     xml.open("GET","/~kuzmmate/messenger.php?nickname="+nickname+"&message="+message+"&blogname="+blogName,true);
+    xml.send();
+}
+
+var intervalID;
+
+function turnOnAndOffMessenger() {
+    if (document.getElementById('isMessengerActive').checked) {
+        intervalID = setInterval(getMessages, 1000);
+    }
+    else {
+        clearInterval(intervalID);
+    }
+}
+
+function getMessages() {
+    var blogName = document.getElementById('blogName').value;
+    var xml = new XMLHttpRequest();
+    xml.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200)
+            displayMessages(this.responseText);
+        scrollMessengerAreaToTheBottom();
+    }
+    xml.open("GET","/~kuzmmate/messenger.php?nickname=&message=&blogname="+blogName,true);
     xml.send();
 }
 
 function displayMessages(response) {
     var messengerArea = document.getElementById('messengerArea');
     messengerArea.value = response;
+}
+
+function scrollMessengerAreaToTheBottom() {
+    var textArea = document.getElementById('messengerArea');
+    textArea.scrollTop = textArea.scrollHeight;
 }

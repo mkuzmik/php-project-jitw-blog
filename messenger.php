@@ -1,6 +1,6 @@
 <?php
 
-// If this script gets empty nickname it sends only all messsages from Messenger Bath in response, otherwise it adds new message
+// If this script gets empty nickname it sends only all messsages from Messenger Bath in response, otherwise it adds new message and responds whole bath
 
 
 $semRes = sem_get(1001, 1, 0666, 0);
@@ -8,6 +8,7 @@ $semRes = sem_get(1001, 1, 0666, 0);
 if(sem_acquire($semRes)) {
 
     check_if_dir_exist_and_create_it_if_not($_GET["blogname"]."/messengerBath");
+    deleteLastIfLimitIsReached();
     if (strlen($_GET["nickname"]) > 0)
         putPostToFile($_GET["blogname"]."/messengerBath", $_GET["nickname"], $_GET["message"]);
 
@@ -16,6 +17,12 @@ if(sem_acquire($semRes)) {
 
 sendAllMessagesInResponse();
 
+function deleteLastIfLimitIsReached() {
+    $messages = getAllMessageFiles();
+    if (count($messages) > 10) {
+        unlink($_GET["blogname"]."/messengerBath/".$messages[2]);
+    }
+}
 
 function check_if_dir_exist_and_create_it_if_not($name) {
     if (!is_dir($name)) {
@@ -30,11 +37,15 @@ function putPostToFile($directory, $nickname, $message) {
     fclose($messagefile);
 }
 
-// sending response
-function sendAllMessagesInResponse() {
-    $messages = array_filter(scandir($_GET["blogname"]."/messengerBath"), function($item) {
+function getAllMessageFiles() {
+    return array_filter(scandir($_GET["blogname"]."/messengerBath"), function($item) {
         return !is_dir($_GET["blogname"]."/messengerBath/" . $item);
     });
+}
+
+// sending response
+function sendAllMessagesInResponse() {
+    $messages = getAllMessageFiles();
 
     $result = "";
 
